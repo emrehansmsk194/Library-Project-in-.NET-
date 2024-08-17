@@ -461,35 +461,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\EMREHAN\\.nuget\\packages\\": {}
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\LibraryWeb.csproj",
+      "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\libraryproject\\Library-Project-in-.NET-\\LibraryWeb\\LibraryWeb.csproj",
       "projectName": "LibraryWeb",
-      "projectPath": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\LibraryWeb.csproj",
-      "packagesPath": "C:\\Users\\EMREHAN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\obj\\",
+      "projectPath": "C:\\Users\\ASUS\\Desktop\\libraryproject\\Library-Project-in-.NET-\\LibraryWeb\\LibraryWeb.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ASUS\\Desktop\\libraryproject\\Library-Project-in-.NET-\\LibraryWeb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\EMREHAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryAPI_Utility\\LibraryAPI_Utility.csproj": {
-              "projectPath": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryAPI_Utility\\LibraryAPI_Utility.csproj"
+            "C:\\Users\\ASUS\\Desktop\\libraryproject\\Library-Project-in-.NET-\\LibraryAPI_Utility\\LibraryAPI_Utility.csproj": {
+              "projectPath": "C:\\Users\\ASUS\\Desktop\\libraryproject\\Library-Project-in-.NET-\\LibraryAPI_Utility\\LibraryAPI_Utility.csproj"
             }
           }
         }
@@ -541,7 +538,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
