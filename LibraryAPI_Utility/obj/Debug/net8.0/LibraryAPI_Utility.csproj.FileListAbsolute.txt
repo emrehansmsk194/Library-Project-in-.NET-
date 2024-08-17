@@ -1,0 +1,11 @@
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI_Utility\bin\Debug\net8.0\LibraryAPI_Utility.deps.json
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI_Utility\bin\Debug\net8.0\LibraryAPI_Utility.dll
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI_Utility\bin\Debug\net8.0\LibraryAPI_Utility.pdb
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI_Utility\obj\Debug\net8.0\LibraryAPI_Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI_Utility\obj\Debug\net8.0\LibraryAPI_Utility.AssemblyInfoInputs.cache
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI_Utility\obj\Debug\net8.0\LibraryAPI_Utility.AssemblyInfo.cs
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI_Utility\obj\Debug\net8.0\LibraryAPI_Utility.csproj.CoreCompileInputs.cache
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI_Utility\obj\Debug\net8.0\LibraryAPI_Utility.dll
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI_Utility\obj\Debug\net8.0\refint\LibraryAPI_Utility.dll
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI_Utility\obj\Debug\net8.0\LibraryAPI_Utility.pdb
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI_Utility\obj\Debug\net8.0\ref\LibraryAPI_Utility.dll
