@@ -5,12 +5,28 @@
       "PackagePath": "staticwebassets\\LibraryWeb.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\ASUS\\Desktop\\libraryproject\\Library-Project-in-.NET-\\LibraryWeb\\wwwroot\\css\\Register.css",
+      "PackagePath": "staticwebassets\\css\\Register.css"
+    },
+    {
+      "Id": "C:\\Users\\ASUS\\Desktop\\libraryproject\\Library-Project-in-.NET-\\LibraryWeb\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
       "Id": "C:\\Users\\ASUS\\Desktop\\libraryproject\\Library-Project-in-.NET-\\LibraryWeb\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\ASUS\\Desktop\\libraryproject\\Library-Project-in-.NET-\\LibraryWeb\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\ASUS\\Desktop\\libraryproject\\Library-Project-in-.NET-\\LibraryWeb\\wwwroot\\images\\619a0a9a-8e50-45a5-afeb-3d7fd3b81bd3.webp",
+      "PackagePath": "staticwebassets\\images\\619a0a9a-8e50-45a5-afeb-3d7fd3b81bd3.webp"
+    },
+    {
+      "Id": "C:\\Users\\ASUS\\Desktop\\libraryproject\\Library-Project-in-.NET-\\LibraryWeb\\wwwroot\\images\\a8975f72-4755-4938-aa83-01dda0ca2b64.webp",
+      "PackagePath": "staticwebassets\\images\\a8975f72-4755-4938-aa83-01dda0ca2b64.webp"
     },
     {
       "Id": "C:\\Users\\ASUS\\Desktop\\libraryproject\\Library-Project-in-.NET-\\LibraryWeb\\wwwroot\\js\\site.js",
