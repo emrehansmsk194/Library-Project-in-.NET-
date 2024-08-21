@@ -21,7 +21,7 @@ namespace LibraryWeb.Services
             {
                 ApiType = SD.ApiType.POST,
                 Data = objToCreate,
-                Url = libraryUrl + "api/Users/login"
+                Url = libraryUrl + "/api/Users/login"
 
             });
         }
@@ -32,7 +32,7 @@ namespace LibraryWeb.Services
             {
                 ApiType = SD.ApiType.POST,
                 Data = objToCreate,
-                Url = libraryUrl + "api/Users/Register"
+                Url = libraryUrl + "/api/Users/register"
             });
         }
     }

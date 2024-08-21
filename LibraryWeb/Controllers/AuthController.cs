@@ -1,6 +1,5 @@
 ﻿using LibraryAPI_Utility;
 using LibraryWeb.Models.DTO;
-using LibraryWeb.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
@@ -8,18 +7,25 @@ using Newtonsoft.Json;
 using System.Security.Claims;
 using LibraryWeb.Models;
 using System.IdentityModel.Tokens.Jwt;
+using LibraryWeb.Services.IServices;
 
 namespace LibraryWeb.Controllers
 {
     public class AuthController : Controller
     {
         private readonly IAuthService _authService;
+     
+        public AuthController(IAuthService authService)
+        {
+            _authService = authService;
+        }
         [HttpGet]
         public IActionResult Login()
         {
             LoginRequestDTO obj = new();
             return View(obj);
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginRequestDTO obj)
@@ -54,15 +60,20 @@ namespace LibraryWeb.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public async Task<IActionResult> Register(RegisterationRequestDTO obj)
         {
-            APIResponse response = await _authService.RegisterAsync<APIResponse>(obj);
-            if (response != null && response.IsSuccess)
-            {
-                return RedirectToAction("Login");
+            if (ModelState.IsValid) 
+            { 
+                APIResponse response = await _authService.RegisterAsync<APIResponse>(obj);
+                if (response != null && response.IsSuccess)
+                {
+                    return RedirectToAction("Login");
+                }
             }
             return View();
         }
+
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();

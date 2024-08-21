@@ -1,1 +1,53 @@
 ﻿@model LibraryWeb.Models.DTO.LoginRequestDTO
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Login System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <link rel="stylesheet" href="~/css/login.css">
+
+
+</head>
+<body>
+    <div class="container mt5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Sign In </h3>
+                    </div>
+                    <div class="card-body">
+                        <form asp-action="Login" method="post">
+                            <div class="form-group">
+                                <label asp-for="UserName" class="text-dark"></label>
+                                <input type="email" class="form-control text-dark" asp-for="UserName" id="username" name="username" placeholder="Enter Email Address" required>
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Password" class="text-dark"></label>
+                                <input type="password" class="form-control text-dark" asp-for="Password" id="password" name="password" placeholder="Enter password" required>
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                        </form>
+                        <h6 class="text-dark mt-1 text-center">You don't have an account ? <a asp-controller="Auth" asp-action="Register">Register</a></h6>
+                    
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="#">Forgot Password</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+}

@@ -1,6 +1,6 @@
 ﻿using LibraryWeb.Models.DTO;
 
-namespace LibraryWeb.Services
+namespace LibraryWeb.Services.IServices
 {
     public interface IAuthService
     {

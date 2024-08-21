@@ -5,12 +5,48 @@
       "PackagePath": "staticwebassets\\LibraryWeb.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\css\\Register.css",
+      "PackagePath": "staticwebassets\\css\\Register.css"
+    },
+    {
+      "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\css\\bootstrap-icons.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-icons.min.css"
+    },
+    {
+      "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
       "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\images\\619a0a9a-8e50-45a5-afeb-3d7fd3b81bd3.webp",
+      "PackagePath": "staticwebassets\\images\\619a0a9a-8e50-45a5-afeb-3d7fd3b81bd3.webp"
+    },
+    {
+      "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\images\\a8975f72-4755-4938-aa83-01dda0ca2b64.webp",
+      "PackagePath": "staticwebassets\\images\\a8975f72-4755-4938-aa83-01dda0ca2b64.webp"
+    },
+    {
+      "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\js\\color-modes.js",
+      "PackagePath": "staticwebassets\\js\\color-modes.js"
     },
     {
       "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\js\\site.js",
