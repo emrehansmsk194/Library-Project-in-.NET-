@@ -32,3 +32,11 @@ C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryWeb\obj\Debug\net8.0\refint\Libr
 C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryWeb\obj\Debug\net8.0\LibraryWeb.pdb
 C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryWeb\obj\Debug\net8.0\LibraryWeb.genruntimeconfig.cache
 C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryWeb\obj\Debug\net8.0\ref\LibraryWeb.dll
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryWeb\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryWeb\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryWeb\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryWeb\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryWeb\obj\Debug\net8.0\LibraryWeb.sourcelink.json
