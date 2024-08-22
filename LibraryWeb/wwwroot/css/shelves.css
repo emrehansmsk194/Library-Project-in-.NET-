@@ -1,0 +1,41 @@
+﻿
+#card1 {
+    width: 600px;
+    background-image: url("../images/library-869061_1280.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Yarı saydam arka plan */
+    border-radius: 50%; /* Yuvarlak buton */
+    width: 40px;
+    height: 40px;
+}
+.carousel-control-prev, .carousel-control-next {
+    margin-top:130px;
+    width: 40px; 
+    height: 40px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    color: white;
+    text-align: center;
+    line-height: 60px; 
+    opacity: 1; 
+}
+
+
+    /* Hover Durumunda Stil */
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+        background-color: rgba(0, 0, 0, 0.7); /* Hover durumda daha koyu arka plan */
+    }
+
+    /* Aktif ve odaklanmış durumda da aynı stilin uygulanması */
+    .carousel-control-prev:focus,
+    .carousel-control-next:focus {
+        outline: none;
+        box-shadow: none;
+        background-color: rgba(0, 0, 0, 0.7); /* Focus durumda da aynı renk */
+    }

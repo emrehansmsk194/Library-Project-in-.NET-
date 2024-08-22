@@ -1,0 +1,90 @@
+﻿@model List<ShelfViewModel>
+
+ <link rel="stylesheet"  href="~/css/shelves.css"/>
+@if (Model == null || !Model.Any())
+{
+    <p>No shelves or books found.</p>
+}
+else
+{
+    <div class="container mt-5" style="padding-top:50px;">
+        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-1 row-cols-xl-2 justify-content-center">
+            @foreach (var shelf in Model)
+            {
+                @if(shelf.Books.Count != 0){
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <div class="card" id = "card1">
+                            <div class="card-header">
+                                <h1 class=" text-center text-dark fw-bold">@shelf.ShelfCode</h1>
+                            </div>
+                            <div class="card-body">
+                                <div id="carouselExample@Guid.NewGuid()" class="carousel slide">
+                                    <div class="carousel-inner">
+                                        @for (int i = 0; i < shelf.Books.Count; i += 4)
+                                        {
+                                            <div class="carousel-item @(i == 0 ? "active" : "")">
+                                                <div class="row">
+                                                    @for (int j = 0; j < 4 && (i + j) < shelf.Books.Count; j++)
+                                                    {
+                                                        var book = shelf.Books[i + j];
+                                                        <div class="col-md-3">
+                                                            <img src="@book.CoverImageUrl" class="d-block w-100" alt="@book.Name">
+                                                            <div class="mt-2">
+                                                                <h5 class="card-title text-white text-center fw-bold">@book.Name</h5>
+                                                                <p class="card-text text-white text-center">@book.Author</p>
+                                                             
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample@Guid.NewGuid()" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample@Guid.NewGuid()" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                }
+               
+            }
+    </div>
+    </div>
+}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var carousels = document.querySelectorAll('.carousel');
+
+        carousels.forEach(function (carousel) {
+            var nextButton = carousel.querySelector('.carousel-control-next');
+            var prevButton = carousel.querySelector('.carousel-control-prev');
+            var items = carousel.querySelectorAll('.carousel-item');
+
+            nextButton.addEventListener('click', function () {
+                var activeItem = carousel.querySelector('.carousel-item.active');
+                var nextItem = activeItem.nextElementSibling || items[0];
+
+                activeItem.classList.remove('active');
+                nextItem.classList.add('active');
+            });
+
+            prevButton.addEventListener('click', function () {
+                var activeItem = carousel.querySelector('.carousel-item.active');
+                var prevItem = activeItem.previousElementSibling || items[items.length - 1];
+
+                activeItem.classList.remove('active');
+                prevItem.classList.add('active');
+            });
+        });
+    });
+</script>

@@ -12,6 +12,7 @@ builder.Services.AddAutoMapper(typeof(MappingConfig));
 builder.Services.AddScoped<IBaseService,BaseService>();
 builder.Services.AddScoped<IAuthService,AuthService>();
 builder.Services.AddScoped<IBookService,BookService>();
+builder.Services.AddScoped<ILocationService,LocationService>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddHttpClient();

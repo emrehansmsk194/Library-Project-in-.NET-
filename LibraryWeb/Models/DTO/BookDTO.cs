@@ -19,5 +19,8 @@ namespace LibraryWeb.Models.DTO
 
         public string? CoverImageUrl { get; set; }
         public bool IsAdminOnly { get; set; }
+
+        public int LocationFloor {  get; set; } 
+        public string LocationShelf { get; set; }
     }
 }
