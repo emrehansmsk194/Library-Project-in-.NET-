@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
+      "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\css\\shelves.css",
+      "PackagePath": "staticwebassets\\css\\shelves.css"
+    },
+    {
       "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -39,6 +43,14 @@
     {
       "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\images\\a8975f72-4755-4938-aa83-01dda0ca2b64.webp",
       "PackagePath": "staticwebassets\\images\\a8975f72-4755-4938-aa83-01dda0ca2b64.webp"
+    },
+    {
+      "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\images\\library-869061_1280.jpg",
+      "PackagePath": "staticwebassets\\images\\library-869061_1280.jpg"
+    },
+    {
+      "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\images\\pexels-photo-4861352.webp",
+      "PackagePath": "staticwebassets\\images\\pexels-photo-4861352.webp"
     },
     {
       "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\js\\bootstrap.bundle.min.js",

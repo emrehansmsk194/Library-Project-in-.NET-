@@ -13,6 +13,7 @@ builder.Services.AddScoped<IBaseService,BaseService>();
 builder.Services.AddScoped<IAuthService,AuthService>();
 builder.Services.AddScoped<IBookService,BookService>();
 builder.Services.AddScoped<ILocationService,LocationService>();
+builder.Services.AddScoped<ICategoryService,CategoryService>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddHttpClient();
@@ -31,6 +32,7 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromMinutes(100);
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
 });
 var app = builder.Build();
 

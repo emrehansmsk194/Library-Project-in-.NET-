@@ -1,0 +1,58 @@
+﻿@model IEnumerable<LibraryWeb.Models.DTO.BookDTO>
+
+
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+	
+
+		<section class=" text-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start mt-5">
+			<div class="container text-center bg-warning">
+				<h1>You can <span class="text-danger">Organize</span> your books in this page.</h1>
+			</div>
+		</section>
+
+	<div class="text-center pt-5 ">
+		<a class="btn btn-primary text-white " asp-action="CreateBook" asp-controller="Book"><i class="bi bi-plus-square-fill"></i>Add New Book</a>
+	</div>
+	<div class ="container-fluid ">
+	<table class="table table-primary table-striped">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Author</th>
+				<th>PageCount</th>
+				<th>Location Id</th>
+				<th>Category</th>
+				<th>Cover Image</th>
+				<th>IsAdminOnly</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var book in Model)
+			{
+				<tr>
+					<td scope="col">@book.Name</td>
+					<td scope="col">@book.Author</td>
+					<td scope="col">@book.PageCount</td>
+					<td scope="col">@book.LocationId</td>
+					<td scope="col">@book.CategoryName</td>
+					<td scope="col"><img src="@book.CoverImageUrl" alt="image" width="200" height="200"></td>
+					<td scope="col">@book.IsAdminOnly</td>
+					<td scope="col">
+						<a class="btn btn-success" asp-action="UpdateBook" asp-controller="Book"><i class="bi bi-pencil-square"></i></a>
+						<a class="btn btn-danger"><i class="bi bi-archive-fill"></i></a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+	</div>
+</body>
+</html>
+
+
+

@@ -18,9 +18,10 @@ namespace LibraryWeb.Models.DTO
         public int CategoryId { get; set; }
 
         public string? CoverImageUrl { get; set; }
-        public bool IsAdminOnly { get; set; }
+        public bool IsAdminOnly { get; set; } = false;
 
         public int LocationFloor {  get; set; } 
         public string LocationShelf { get; set; }
+        public string CategoryName { get; set; }
     }
 }

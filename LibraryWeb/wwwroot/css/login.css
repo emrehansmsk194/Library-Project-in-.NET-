@@ -10,12 +10,7 @@ body {
     color: white;
 }
 
-.navbar-nav {
-    font-weight: bold;
-    font-style: italic;
-    font-size: 17px;   
 
-}
 .col-md-6 {
  
     display: flex;
@@ -53,7 +48,7 @@ body {
     padding: 10px; 
 }
 
-.btn-primary {
+.login-form btn-primary {
     background-color: #007bff;
     border: none;
     padding: 10px 20px;
@@ -63,7 +58,7 @@ body {
     transition: background-color 0.3s ease, transform 0.2s;
 }
 
-.btn-primary:hover {
+.login-form btn-primary:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
 }
@@ -72,10 +67,11 @@ label {
     margin-bottom: 5px;
     color: #555;
 }
-.form-group {
+
+#form-1, form-2 {
     margin-bottom: 15px;
 }
-input[type="text"], input[type="email"], input[type="password"] {
+.login-form input[type="text"], input[type="email"], input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -86,14 +82,14 @@ input[type="text"], input[type="email"], input[type="password"] {
     background-color: #f9f9f9;
 }
 
-    input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    .login-form input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
         border-color: #007bff;
         box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
         outline: none;
     }
 
 
-.btn {
+.login-form btn {
     width: 100%;
     padding: 10px;
     background-color: #007bff;
@@ -105,7 +101,7 @@ input[type="text"], input[type="email"], input[type="password"] {
     transition: background-color 0.3s ease;
 }
 
-    .btn:hover {
+    .login-form btn:hover {
         background-color: #0056b3;
     }
 

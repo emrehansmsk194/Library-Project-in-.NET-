@@ -26,6 +26,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/EMREHAN/source/repos/LibraryAPI/LibraryWeb/Views/Book/CreateBook.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xDcmVhdGVCb29rLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/EMREHAN/source/repos/LibraryAPI/LibraryWeb/Views/Book/IndexBook.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xJbmRleEJvb2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/EMREHAN/source/repos/LibraryAPI/LibraryWeb/Views/Book/Shelves.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xTaGVsdmVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
