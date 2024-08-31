@@ -1,0 +1,56 @@
+﻿@model IEnumerable<LibraryWeb.Models.DTO.BookDTO>
+<html>
+	<head>
+		<link rel="stylesheet" href="~/css/Cards.css" />
+	</head>
+	<body>
+		<style>
+			#alertDiv {
+				position: absolute;
+				height: 70px;
+				width: auto;
+				top: 50%;
+				left: 50%;
+				margin-top: -35px;
+				margin-left: -318px;
+			
+
+			}
+		</style>
+	@if(!Model.Any())
+	{
+		 
+		<div class="container d-flex justify-content-center align-items-center mt-5" >
+			<div class="alert alert-warning alert-dismissible fade show" role="alert" id="alertDiv">
+				<p class="lead text-center">Book isn't available, Please Try again or contact to Library Staff !</p>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		</div>
+		
+
+	}
+	<section class="py-5">
+		<div class="container px-4 px-lg-5 mt-5">
+			<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+				@foreach(var book in Model) {
+				<div class="col mt-7">
+					
+						<div class="card bg-white custom-card " style="width: 15rem;">
+							<img src="@book.CoverImageUrl" alt="Book Image" class="card-img-top">
+							<div class="card-body">
+								<h5 class="card-title text-dark text-center fw-bold">@book.Name</h5>
+								<p class=" card-text text-dark ">PageCount : @book.PageCount</p>
+								<p class=" card-text text-dark ">Author: @book.Author</p>
+								<p class=" card-text text-dark ">Category: @book.CategoryName</p>
+								<p class=" card-text text-dark ">Location: @book.LocationFloor-@book.LocationShelf</p>
+								
+							</div>
+						</div>
+					
+				</div>
+				}
+			</div>
+		</div>
+		</section>
+	</body>
+</html>

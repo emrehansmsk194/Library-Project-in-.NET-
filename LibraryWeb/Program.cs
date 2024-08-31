@@ -57,5 +57,8 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllerRoute(
+    name: "BooksByCategory",
+    pattern: "{controller=Book}/{action=BookByCategory}/{categoryId?}");
 
 app.Run();

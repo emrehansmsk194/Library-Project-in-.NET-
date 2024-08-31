@@ -11,13 +11,15 @@ using LibraryWeb.Services.IServices;
 
 namespace LibraryWeb.Controllers
 {
-    public class AuthController : Controller
+    public class AuthController : BaseController
     {
         private readonly IAuthService _authService;
+        private readonly ICategoryService _categoryService;
      
-        public AuthController(IAuthService authService)
+        public AuthController(IAuthService authService, ICategoryService categoryService) : base(categoryService)
         {
             _authService = authService;
+            _categoryService = categoryService;
         }
         [HttpGet]
         public IActionResult Login()

@@ -1,16 +1,18 @@
 using LibraryWeb.Models;
+using LibraryWeb.Services.IServices;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace LibraryWeb.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
+        private readonly ICategoryService _categoryService;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ICategoryService categoryService) : base(categoryService) 
         {
-            _logger = logger;
+            _categoryService = categoryService;
         }
 
         public IActionResult Index()

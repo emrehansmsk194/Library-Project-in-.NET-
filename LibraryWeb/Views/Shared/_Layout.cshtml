@@ -50,12 +50,31 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="Shelves"><i class="bi bi-bookshelf"></i>Shelves</a>
                         </li>
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-list"></i>Categories
+                            </a>
+                            <ul class="dropdown-menu ">
+                                @{
+                                    var categories = ViewData["Categories"] as IEnumerable<LibraryWeb.Models.DTO.CategoryDTO>;
+                                    if(categories != null && categories.Any())
+                                    {
+                                        foreach(var category in categories)
+                                        {
+                                            <li><a class="dropdown-item text-dark" href="@Url.Action("BookByCategory", "Book", new { categoryId = category.CategoryId })">@category.CategoryName</a></li>
+                                        }
+                                    }
+
+                               }
+                            </ul>
+                        </li>
                         @if(User.IsInRole("admin"))
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark"  asp-controller="Book" asp-action="IndexBook">Book Table</a>
                             </li>
                         }
+                    
                         @if (httpAcc.HttpContext.Session.GetString(SD.SessionToken) != null &&
                         httpAcc.HttpContext.Session.GetString(SD.SessionToken).ToString().Length > 0)
                         {
@@ -68,10 +87,10 @@
                         {
                             <li class="nav-item">
 
-                                <a class="nav-link text-dark" asp-controller="Auth" asp-action="Login">Login</a>
+                                <a class="nav-link text-dark" asp-controller="Auth" asp-action="Login"><i class="bi bi-box-arrow-in-right"></i>Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Auth" asp-action="Register">Register</a>
+                                <a class="nav-link text-dark" asp-controller="Auth" asp-action="Register"><i class="bi bi-r-circle-fill"></i>Register</a>
                             </li>
                         }
                       
@@ -79,10 +98,10 @@
                        
 
                     </ul>
-                    <form method="post">
+                    <form method="post" asp-action="SearchBookPost" asp-controller="Book">
                         <div class="input-group  w-100">
                             <button class="btn btn-outline-dark" type="submit" id="button-addon1"><i class="bi bi-search"></i></button>
-                            <input type="text" class="form-control" placeholder="Search a Book" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                            <input type="text" class="form-control" name="search" placeholder="Search a Book" aria-label="Example text with button addon" aria-describedby="button-addon1">
                         </div>
                     </form>
                    

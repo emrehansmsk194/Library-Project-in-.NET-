@@ -11,22 +11,22 @@ using Newtonsoft.Json;
 
 namespace LibraryWeb.Controllers
 {
-    public class BookController : Controller
+    public class BookController : BaseController
     {
         private readonly IBookService _bookService;
         private readonly ILocationService _locationService;
         private readonly ICategoryService _categoryService;
         private readonly IMapper _mapper;
         public BookController(IBookService bookService, IMapper mapper, ILocationService locationService,
-        ICategoryService categoryService)
+        ICategoryService categoryService) :base(categoryService)
         {
             _mapper = mapper;
             _bookService = bookService;
             _locationService = locationService;
             _categoryService = categoryService;
         }
-       
-        
+
+
 
         public async Task<IActionResult> IndexBook()
         {
@@ -142,14 +142,14 @@ namespace LibraryWeb.Controllers
                 }
                 else
                 {
-                    if(response.ErrorMessages.Count >0)
+                    if (response.ErrorMessages.Count > 0)
                     {
-                        ModelState.AddModelError("ErrorMessages",response.ErrorMessages.FirstOrDefault());
+                        ModelState.AddModelError("ErrorMessages", response.ErrorMessages.FirstOrDefault());
                     }
                 }
             }
             var resp = await _categoryService.GetAllAsync<APIResponse>(HttpContext.Session.GetString(SD.SessionToken));
-            if(resp != null && resp.IsSuccess)
+            if (resp != null && resp.IsSuccess)
             {
                 model.CategoryList = JsonConvert.DeserializeObject<List<BookDTO>>(Convert.ToString(resp.Result)).Select(i => new SelectListItem
                 {
@@ -173,7 +173,38 @@ namespace LibraryWeb.Controllers
 
         }
         [HttpGet]
-        public async Task<IActionResult> Shelves(string value = "") 
+        public async Task<IActionResult> BookByCategory(int categoryId)
+        {
+            List<BookDTO> books = new();
+            var response = await _bookService.GetByCategoryAsync<APIResponse>(categoryId, HttpContext.Session.GetString(SD.SessionToken));
+            if (response != null && response.IsSuccess)
+            {
+                books = JsonConvert.DeserializeObject<List<BookDTO>>(JsonConvert.SerializeObject(response.Result));
+				var locationResponse = await _locationService.GetAllAsync<APIResponse>(HttpContext.Session.GetString(SD.SessionToken));
+				if (locationResponse != null && locationResponse.IsSuccess)
+				{
+					var locations = JsonConvert.DeserializeObject<List<LocationDTO>>(JsonConvert.SerializeObject(locationResponse.Result));
+					foreach (var book in books)
+					{
+						var location = locations.FirstOrDefault(u => u.LocationId == book.LocationId);
+						if (location != null)
+						{
+							book.LocationFloor = location.Floor;
+							book.LocationShelf = location.Shelf;
+						}
+					}
+				}
+				var categoryResponse = await _categoryService.GetAsync<APIResponse>(categoryId, HttpContext.Session.GetString(SD.SessionToken));
+				if (categoryResponse != null && categoryResponse.IsSuccess)
+				{
+					var category = JsonConvert.DeserializeObject<CategoryDTO>(Convert.ToString(categoryResponse.Result));
+					ViewBag.CategoryName = category.CategoryName;
+				}
+			}
+            return View(books);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Shelves(string value = "")
         {
             List<LocationDTO> locations = new();
             var locationResponse = await _locationService.GetAllAsync<APIResponse>(HttpContext.Session.GetString(SD.SessionToken));
@@ -194,15 +225,15 @@ namespace LibraryWeb.Controllers
                     });
                 }
             }
-            if(!string.IsNullOrEmpty(value))
+            if (!string.IsNullOrEmpty(value))
             {
                 shelves = shelves.Where(u => u.ShelfCode.ToLower().Contains(value.ToLower())).ToList();
             }
-			if (shelves.Count == 0)
-			{
-				ViewBag.Message = "No shelves or books found.";
-			}
-			return View(shelves);
+            if (shelves.Count == 0)
+            {
+                ViewBag.Message = "No shelves or books found.";
+            }
+            return View(shelves);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -210,6 +241,54 @@ namespace LibraryWeb.Controllers
         {
             return RedirectToAction("Shelves", new { value = value });
         }
+        [HttpGet]
+        public async Task<IActionResult> SearchBook(string search = "")
+        {
+            List<BookDTO> bookList = new();
+            var response = await _bookService.GetAllAsync<APIResponse>(HttpContext.Session.GetString(SD.SessionToken));
+            if (response != null && response.IsSuccess)
+            {
+                bookList = JsonConvert.DeserializeObject<List<BookDTO>>(Convert.ToString(response.Result));
+                var categoryResponse = await _categoryService.GetAllAsync<APIResponse>(HttpContext.Session.GetString(SD.SessionToken));
+                if (categoryResponse != null && categoryResponse.IsSuccess)
+                {
+                    var categories = JsonConvert.DeserializeObject<List<CategoryDTO>>(JsonConvert.SerializeObject(categoryResponse.Result));
+                    foreach (var book in bookList)
+                    {
+                        var category = categories.FirstOrDefault(u => u.CategoryId == book.CategoryId);
+                        if(category != null)
+                        {
+                            book.CategoryName = category.CategoryName;
+                        }
+                }
+                }
+                var locationResponse = await _locationService.GetAllAsync<APIResponse>(HttpContext.Session.GetString(SD.SessionToken));
+                if(locationResponse != null && locationResponse.IsSuccess )
+                {
+                    var locations = JsonConvert.DeserializeObject<List<LocationDTO>>(JsonConvert.SerializeObject(locationResponse.Result));
+                    foreach(var book in bookList)
+                    {
+                        var location = locations.FirstOrDefault(u => u.LocationId == book.LocationId); 
+                        if(location != null)
+                        {
+                            book.LocationFloor = location.Floor;
+                            book.LocationShelf = location.Shelf;
+                        }
+                    }
+                }
+              if(!string.IsNullOrEmpty(search))
+                {
+                    bookList = bookList.Where(u => u.Name.ToLower().Contains(search.ToLower())).ToList(); 
+                }
+
+            }
+          
+            return View(bookList);
+        }
+        [HttpPost]
+        public async Task<IActionResult> SearchBookPost(string search)
+        {
+            return RedirectToAction("SearchBook","Book", new { search = search });
+        }
     }
-   
 }
