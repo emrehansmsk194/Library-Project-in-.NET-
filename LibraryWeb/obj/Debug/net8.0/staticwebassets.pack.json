@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\LibraryWeb.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\css\\Cards.css",
+      "PackagePath": "staticwebassets\\css\\Cards.css"
+    },
+    {
       "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\css\\Register.css",
       "PackagePath": "staticwebassets\\css\\Register.css"
     },
@@ -49,8 +53,16 @@
       "PackagePath": "staticwebassets\\images\\library-869061_1280.jpg"
     },
     {
+      "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\images\\library-shelves-carousel.jpg",
+      "PackagePath": "staticwebassets\\images\\library-shelves-carousel.jpg"
+    },
+    {
       "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\images\\pexels-photo-4861352.webp",
       "PackagePath": "staticwebassets\\images\\pexels-photo-4861352.webp"
+    },
+    {
+      "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\images\\thumbs_b2_742a38c5098fb9a088685fff6250d9b3.jpg",
+      "PackagePath": "staticwebassets\\images\\thumbs_b2_742a38c5098fb9a088685fff6250d9b3.jpg"
     },
     {
       "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\js\\bootstrap.bundle.min.js",

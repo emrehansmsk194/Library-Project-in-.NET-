@@ -161,17 +161,24 @@ namespace LibraryWeb.Controllers
             return View(model);
         }
         [HttpGet]
-        public async Task<IActionResult> BookByLocation(int locationId)
+     public async Task<IActionResult> BookPage(int bookId)
         {
-            List<BookDTO> books = new();
-            var response = await _bookService.GetByLocationAsync<APIResponse>(locationId, HttpContext.Session.GetString(SD.SessionToken));
-            if (response != null && response.IsSuccess)
+            BookDTO book = new();
+            var response =await _bookService.GetAsync<APIResponse>(bookId, HttpContext.Session.GetString(SD.SessionToken));
+            if(response != null && response.IsSuccess)
             {
-                books = JsonConvert.DeserializeObject<List<BookDTO>>(JsonConvert.SerializeObject(response.Result));
+                book = JsonConvert.DeserializeObject<BookDTO>(JsonConvert.SerializeObject(response.Result));
+                var categoryResponse = await _categoryService.GetAsync<APIResponse>(book.CategoryId,HttpContext.Session.GetString(SD.SessionToken));
+                if (categoryResponse != null && categoryResponse.IsSuccess)
+                {
+                    var category = JsonConvert.DeserializeObject<CategoryDTO>(Convert.ToString(categoryResponse.Result));
+                    book.CategoryName = category.CategoryName;
+                }
             }
-            return View(books);
 
+            return View(book);
         }
+       
         [HttpGet]
         public async Task<IActionResult> BookByCategory(int categoryId)
         {

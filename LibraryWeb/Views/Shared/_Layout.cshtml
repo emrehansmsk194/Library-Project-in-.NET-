@@ -24,92 +24,109 @@
             padding: 0;
             color: white;
         }
+
+       /*  .navbar-brand {
+            font-size: 1.5rem; 
+            padding: 0.5rem 1rem; 
+        }
+        .navbar {
+            min-height: 70px; 
+        }
         .navbar-nav {
             font-weight: bold;
             font-style: italic;
-            font-size: 17px;
+            font-size: 18px;
+        } */
+
+        .navbar-toggler {
+            padding: 0.5rem; 
         }
+
+            .navbar-nav .nav-link {
+                padding: 0.75rem 1rem; /* Üst ve alt padding */
+            }
         nav ul li {
             padding-left: 25px !important;
         }
        
     </style>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 fixed-top">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom box-shadow mb-3 fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">LibraryWeb</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house-fill"></i>Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house-fill"></i> Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="Shelves"><i class="bi bi-bookshelf"></i>Shelves</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="Shelves"><i class="bi bi-bookshelf"></i> Shelves</a>
                         </li>
-                        <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-list"></i>Categories
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-list"></i> Categories
                             </a>
-                            <ul class="dropdown-menu ">
+                            <ul class="dropdown-menu  fw-bold" aria-labelledby="navbarDropdown">
                                 @{
                                     var categories = ViewData["Categories"] as IEnumerable<LibraryWeb.Models.DTO.CategoryDTO>;
-                                    if(categories != null && categories.Any())
+                                    if (categories != null && categories.Any())
                                     {
-                                        foreach(var category in categories)
+                                        foreach (var category in categories)
                                         {
                                             <li><a class="dropdown-item text-dark" href="@Url.Action("BookByCategory", "Book", new { categoryId = category.CategoryId })">@category.CategoryName</a></li>
                                         }
                                     }
-
-                               }
+                                }
                             </ul>
                         </li>
-                        @if(User.IsInRole("admin"))
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Event" asp-action="Index"><i class="bi bi-calendar4-event"></i> Events</a>
+                        </li>
+                        @if (User.IsInRole("admin"))
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark"  asp-controller="Book" asp-action="IndexBook">Book Table</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person"></i> Admin</a>
+                                <ul class="dropdown-menu fw-bold" aria-labelledy="navbarDropdown2">
+                                <a class="nav-link text-dark" asp-controller="Book" asp-action="IndexBook"><i class="bi bi-table"></i> Book Table</a>
+                                </ul>
                             </li>
                         }
-                    
-                        @if (httpAcc.HttpContext.Session.GetString(SD.SessionToken) != null &&
-                        httpAcc.HttpContext.Session.GetString(SD.SessionToken).ToString().Length > 0)
+                        <li class="nav-item">
+                            <a class="nav-link text-dark"><i class="bi bi-briefcase-fill"></i> Borrowed</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        @if (httpAcc.HttpContext.Session.GetString(SD.SessionToken) != null && httpAcc.HttpContext.Session.GetString(SD.SessionToken).ToString().Length > 0)
                         {
-
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Auth" asp-action="Logout"><i class="bi bi-power"></i>Logout</a>
+                                <a class="nav-link text-dark" asp-controller="Auth" asp-action="Logout"><i class="bi bi-power"></i> Logout</a>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item">
-
-                                <a class="nav-link text-dark" asp-controller="Auth" asp-action="Login"><i class="bi bi-box-arrow-in-right"></i>Login</a>
+                                <a class="nav-link text-dark" asp-controller="Auth" asp-action="Login"><i class="bi bi-box-arrow-in-right"></i> Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Auth" asp-action="Register"><i class="bi bi-r-circle-fill"></i>Register</a>
+                                <a class="nav-link text-dark" asp-controller="Auth" asp-action="Register"><i class="bi bi-r-circle-fill"></i> Register</a>
                             </li>
                         }
-                      
-                        
-                       
-
                     </ul>
-                    <form method="post" asp-action="SearchBookPost" asp-controller="Book">
-                        <div class="input-group  w-100">
-                            <button class="btn btn-outline-dark" type="submit" id="button-addon1"><i class="bi bi-search"></i></button>
-                            <input type="text" class="form-control" name="search" placeholder="Search a Book" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    <form class="d-flex" method="post" asp-action="SearchBookPost" asp-controller="Book">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="search" placeholder="Search a Book">
+                            <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i></button>
                         </div>
                     </form>
-                   
                 </div>
             </div>
         </nav>
+
     </header>
-    <div class="container">
+    <div class="container-fluid">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

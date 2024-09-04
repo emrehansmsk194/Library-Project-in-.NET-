@@ -1,0 +1,78 @@
+﻿@model LibraryWeb.Models.VM.BookUpdateVm
+
+<form asp-action="UpdateBook" asp-controller="Book">
+	<br />
+	<div class="container border mt-5 p-3 bg-secondary w-75">
+		<h1 class="text-primary text-center pt-2">Update Book</h1>
+		<hr />
+		<div class="row">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="col-2">
+				<label asp-for="Book.Name" class="control-label pt-2 text-dark" style="font-size:20px;"></label>
+			</div>
+			<div class="col-10 pb-3">
+				<input asp-for="Book.Name" class="form-control bg-white" />
+				<span asp-validation-for="Book.Name" class="text-danger"></span>
+			</div>
+
+			<div class="col-2">
+				<label asp-for="Book.PageCount" class="control-label pt-2 text-dark" style="font-size:20px;"></label>
+			</div>
+			<div class="col-10 pb-3">
+				<input asp-for="Book.PageCount" class="form-control bg-white" />
+				<span asp-validation-for="Book.PageCount" class="text-danger"></span>
+			</div>
+			<div class="col-2">
+				<label asp-for="Book.Author" class="control-label pt-2 text-dark" style="font-size:20px;"></label>
+			</div>
+			<div class="col-10 pb-3">
+				<input asp-for="Book.Author" class="form-control bg-white" />
+				<span asp-validation-for="Book.Author" class="text-danger"></span>
+			</div>
+
+
+
+			<div class="col-2">
+				<label asp-for="Book.CoverImageUrl" class="control-label pt-2 text-dark" style="font-size:20px;"></label>
+			</div>
+			<div class="col-10 pb-3">
+				<input asp-for="Book.CoverImageUrl" class="form-control bg-white" />
+				<span asp-validation-for="Book.CoverImageUrl" class="text-danger"></span>
+			</div>
+			<div class="col-2">
+				<label asp-for="Book.CategoryId" class="control-label pt-2 text-dark" style="font-size:20px;"></label>
+			</div>
+			<div class="col-10 pb-3">
+				<select asp-for="Book.CategoryId" class="form-select bg-white" asp-items="@Model.CategoryList">
+					<option selected> --SelectCategory-- </option>
+				</select>
+			</div>
+			<div class="col-2">
+				<label asp-for="Book.LocationId" class="control-label pt-2 text-dark" style="font-size:20px;"></label>
+			</div>
+			<div class="col-10 pb-3">
+				<input asp-for="Book.LocationId" class="form-control bg-white" />
+				<span asp-validation-for="Book.LocationId" class="text-danger"></span>
+			</div>
+
+			<div class="col-2">
+				<label asp-for="Book.IsAdminOnly" class="control-label pt-2 text-dark" style="font-size:20px;"></label>
+			</div>
+			<div class="col-10 pb-3">
+				<select asp-for="Book.PageCount" class="form-control bg-white" />
+				<option value="@Model.Book.IsAdminOnly">True</option>
+				<option value="@Model.Book.IsAdminOnly">False</option>
+				</select>
+			</div>
+
+
+			<div class="col-5 offset-2">
+				<a asp-action="IndexBook" asp-controller="Book" class="btn-primary btn form-control ">Back to List</a>
+			</div>
+			<div class="col-5">
+				<input type="submit" value="Update" class="btn btn-success form-control" />
+			</div>
+		</div>
+	</div>
+
+</form>

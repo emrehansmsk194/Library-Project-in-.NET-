@@ -1,0 +1,36 @@
+﻿@model LibraryWeb.Models.DTO.BookDTO
+<html>
+<head>
+
+</head>
+<body>
+	<div class="container px-4 px-lg-5  bg-success w-50" style="margin-top:100px;">
+		<div class=" mt-2 ">
+			<h1 class=" card-title ">@Model.Name</h1>
+		<div class="row">
+			<div class="col">
+		<img src="@Model.CoverImageUrl" alt="book image"  />
+				</div>
+			<div class="col">
+					<p >This book is not currently checked out by any user. If you would like to borrow this book, please contact the library staff. For 1 month you can benefit from this book.
+						
+					</p>
+					<p>Warning: <span class="text-warning">If you have borrowed this book in the last 1 year, you cannot borrow it again.</span></p>
+			</div>
+			</div>
+		<div class="row">
+			<div class="col">
+					<p class="card-text fw-bold ">Author: @Model.Author</p>
+					<p class="card-text fw-bold ">PageCount: @Model.PageCount</p>
+					<p class="card-text fw-bold ">Category: @Model.CategoryName</p>
+			</div>
+			<div class="col">
+				<a class="btn btn-primary d-flex justify-content-center mt-2">Borrowed Books</a>
+				<a class=" btn btn-danger d-flex justify-content-center mt-1" asp-action="Shelves" asp-controller="Book">Go Back to Shelves</a>
+			</div>
+		</div>
+
+		</div>
+	</div>
+</body>
+</html>

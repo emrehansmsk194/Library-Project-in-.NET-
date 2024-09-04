@@ -17,7 +17,7 @@
 	<div class="text-center pt-5 ">
 		<a class="btn btn-primary text-white " asp-action="CreateBook" asp-controller="Book"><i class="bi bi-plus-square-fill"></i>Add New Book</a>
 	</div>
-	<div class ="container-fluid ">
+	<div class ="container ">
 	<table class="table table-primary table-striped">
 		<thead>
 			<tr>
@@ -43,7 +43,7 @@
 					<td scope="col"><img src="@book.CoverImageUrl" alt="image" width="200" height="200"></td>
 					<td scope="col">@book.IsAdminOnly</td>
 					<td scope="col">
-						<a class="btn btn-success" asp-action="UpdateBook" asp-controller="Book"><i class="bi bi-pencil-square"></i></a>
+						<a class="btn btn-success" asp-action="UpdateBook" asp-controller="Book" asp-route-id="@book.BookId"><i class="bi bi-pencil-square"></i></a>
 						<a class="btn btn-danger"><i class="bi bi-archive-fill"></i></a>
 					</td>
 				</tr>

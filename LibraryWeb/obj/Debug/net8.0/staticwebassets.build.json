@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qHMitYfoaLtRx58Dlil09M6EsUFqOcILlI5SGvq/uRo=",
+  "Hash": "dzL0iuIKt2W5Q0ZlGPevy16HHMVQEGz8KfooVyVy+HA=",
   "Source": "LibraryWeb",
   "BasePath": "_content/LibraryWeb",
   "Mode": "Default",
@@ -110,6 +110,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap-icons.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\css\\Cards.css",
+      "SourceId": "LibraryWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\",
+      "BasePath": "_content/LibraryWeb",
+      "RelativePath": "css/Cards.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Cards.css"
     },
     {
       "Identity": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\css\\login.css",
@@ -264,6 +283,25 @@
       "OriginalItemSpec": "wwwroot\\images\\library-869061_1280.jpg"
     },
     {
+      "Identity": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\images\\library-shelves-carousel.jpg",
+      "SourceId": "LibraryWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\",
+      "BasePath": "_content/LibraryWeb",
+      "RelativePath": "images/library-shelves-carousel.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\library-shelves-carousel.jpg"
+    },
+    {
       "Identity": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\images\\pexels-photo-4861352.webp",
       "SourceId": "LibraryWeb",
       "SourceType": "Discovered",
@@ -281,6 +319,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\pexels-photo-4861352.webp"
+    },
+    {
+      "Identity": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\images\\thumbs_b2_742a38c5098fb9a088685fff6250d9b3.jpg",
+      "SourceId": "LibraryWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\",
+      "BasePath": "_content/LibraryWeb",
+      "RelativePath": "images/thumbs_b2_742a38c5098fb9a088685fff6250d9b3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\thumbs_b2_742a38c5098fb9a088685fff6250d9b3.jpg"
     },
     {
       "Identity": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\js\\bootstrap.bundle.min.js",

@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
  <section class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start mt-5">
-     <div class="container">
+     <div class="container-fluid">
          <div class="d-sm-flex align-items-center justify-content-between">
              <div>
                  <h1>Explore our <span class="text-warning">Library</span></h1>
@@ -62,7 +62,7 @@ else
                             </div>
                             <div class="card-body">
                                 <div id="carouselExample@Guid.NewGuid()" class="carousel slide">
-                                    <div class="carousel-inner">
+                                    <div class="carousel-inner d-block">
                                         @for (int i = 0; i < shelf.Books.Count; i += 4)
                                         {
                                             <div class="carousel-item @(i == 0 ? "active" : "")">
@@ -73,7 +73,9 @@ else
                                                         <div class="col-md-3">
                                                             <img src="@book.CoverImageUrl" class="d-block w-100" alt="@book.Name">
                                                             <div class="mt-2">
-                                                                <h5 class="card-title text-white text-center fw-bold">@book.Name</h5>
+                                                                    <h5 class="card-title text-white text-center fw-bold"><a class="text-white" asp-controller="Book" asp-action="BookPage" asp-route-bookId="@book.BookId"
+                                                                    style="text-decoration:none;">@book.Name</a></h5>
+                                                             
                                                                 <p class="card-text text-white text-center">@book.Author</p>
                                                              
                                                             </div>

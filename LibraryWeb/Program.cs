@@ -60,5 +60,8 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "BooksByCategory",
     pattern: "{controller=Book}/{action=BookByCategory}/{categoryId?}");
+app.MapControllerRoute(
+    name: "BookPage",
+    pattern: "{controller=Book}/{action=BookPage}/{bookId?}");
 
 app.Run();
