@@ -209,7 +209,7 @@ namespace LibraryAPI.Controllers
 
 
         }
-        [HttpGet("category = {CategoryId:int}",Name ="GetBookByCategory")]
+        [HttpGet("category={CategoryId:int}",Name ="GetBookByCategory")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -303,7 +303,39 @@ namespace LibraryAPI.Controllers
             return _response;
         }
         //GetBookByLocation 
+        [HttpGet("location={LocationId:int}", Name = "GetBookByLocation")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
+        public async Task<ActionResult<APIResponse>> GetBookByLocation(int LocationId)
+        {
+            try
+            {
+                if(LocationId == 0)
+                {
+                    _response.IsSuccess = false;
+                    _response.StatusCode = HttpStatusCode.BadRequest;
+                    return BadRequest(_response);
+                }
+                var book = await _bookRepository.GetAllAsync(u => u.LocationId == LocationId);
+               
+                if (!User.IsInRole("admin"))
+                {
+                    book = book.Where(b => !b.IsAdminOnly).ToList();
+                }
+                _response.Result = _mapper.Map<List<BookDTO>>(book);
+                _response.StatusCode = HttpStatusCode.OK;
+                return Ok(_response);
+
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string> { ex.ToString() };
+            }
+            return _response;
+
+        }
 
 
     }

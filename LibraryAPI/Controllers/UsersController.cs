@@ -1,6 +1,9 @@
-﻿using LibraryAPI.Models.DTO;
+﻿using LibraryAPI.Models;
+using LibraryAPI.Models.DTO;
 using LibraryAPI.Repository.IRepository;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Net;
 
 namespace LibraryAPI.Controllers
@@ -11,9 +14,11 @@ namespace LibraryAPI.Controllers
     {
         private readonly IUserRepository _userRepo;
         protected APIResponse _response;
-        public UsersController(IUserRepository userRepo)
+        private readonly UserManager<ApplicationUser> _userManager;
+        public UsersController(IUserRepository userRepo, UserManager<ApplicationUser> userManager)
         {
             _userRepo = userRepo;
+            _userManager = userManager;
             _response = new();
         }
         [HttpPost("login")]
@@ -60,6 +65,25 @@ namespace LibraryAPI.Controllers
             _response.StatusCode = HttpStatusCode.OK;
             _response.IsSuccess = true;
             return Ok(_response);
+        }
+        [HttpGet("usernames")]
+        public async Task<IActionResult> GetAllUserNames()
+        {
+            var usernames = await _userRepo.GetAllUsernames();
+            _response.Result = usernames;
+            _response.StatusCode = HttpStatusCode.OK;
+            return Ok(_response);
+        }
+        [HttpGet("All")]
+        public async Task<List<UserDTO>> GetAllUsersAsync()
+        {
+            var users = await _userManager.Users.ToListAsync(); // Veritabanından tüm kullanıcıları al
+            return users.Select(user => new UserDTO
+            {
+                Id = user.Id,
+                UserName = user.UserName,
+                Name = user.Name
+            }).ToList();
         }
     }
 }

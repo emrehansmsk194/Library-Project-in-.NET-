@@ -129,6 +129,7 @@ C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI\obj\Debug\net8.0\LibraryAPI.
 C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI\obj\Debug\net8.0\LibraryAPI.csproj.CoreCompileInputs.cache
 C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI\obj\Debug\net8.0\LibraryAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI\obj\Debug\net8.0\LibraryAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI\obj\Debug\net8.0\LibraryAPI.sourcelink.json
 C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\EMREHAN\source\repos\LibraryAPI\LibraryAPI\obj\Debug\net8.0\staticwebassets\msbuild.LibraryAPI.Microsoft.AspNetCore.StaticWebAssets.props

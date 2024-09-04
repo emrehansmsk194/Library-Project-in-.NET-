@@ -3,6 +3,7 @@ using LibraryAPI.Models;
 using LibraryAPI.Models.DTO;
 using LibraryAPI.Repository.IRepository;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -120,6 +121,20 @@ namespace LibraryAPI.Repository
             {
             }
             return new UserDTO();
+        }
+        public async Task<List<string>>  GetAllUsernames()
+        {
+            return _db.Users.Select(u => u.UserName).ToList();
+        }
+        public async Task<List<UserDTO>> GetAllUsersAsync()
+        {
+            var users = await _userManager.Users.ToListAsync();  
+            return users.Select(user => new UserDTO
+            {
+                Id = user.Id,
+                UserName = user.UserName,
+                Name = user.Name
+            }).ToList();
         }
     }
 }
