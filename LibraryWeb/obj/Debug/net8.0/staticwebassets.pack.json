@@ -49,6 +49,14 @@
       "PackagePath": "staticwebassets\\images\\a8975f72-4755-4938-aa83-01dda0ca2b64.webp"
     },
     {
+      "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\images\\image-old-library-dark-place-style-texturerich-layers_917048-949.avif",
+      "PackagePath": "staticwebassets\\images\\image-old-library-dark-place-style-texturerich-layers_917048-949.avif"
+    },
+    {
+      "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\images\\large-library-with-many-books-and-bookshelves-for-learning-with-knowledge-ai-generated-free-photo.jpg",
+      "PackagePath": "staticwebassets\\images\\large-library-with-many-books-and-bookshelves-for-learning-with-knowledge-ai-generated-free-photo.jpg"
+    },
+    {
       "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\images\\library-869061_1280.jpg",
       "PackagePath": "staticwebassets\\images\\library-869061_1280.jpg"
     },
@@ -63,6 +71,10 @@
     {
       "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\images\\thumbs_b2_742a38c5098fb9a088685fff6250d9b3.jpg",
       "PackagePath": "staticwebassets\\images\\thumbs_b2_742a38c5098fb9a088685fff6250d9b3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\js\\Events.js",
+      "PackagePath": "staticwebassets\\js\\Events.js"
     },
     {
       "Id": "C:\\Users\\EMREHAN\\source\\repos\\LibraryAPI\\LibraryWeb\\wwwroot\\js\\bootstrap.bundle.min.js",

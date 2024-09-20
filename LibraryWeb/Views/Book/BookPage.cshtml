@@ -25,7 +25,7 @@
 					<p class="card-text fw-bold ">Category: @Model.CategoryName</p>
 			</div>
 			<div class="col">
-				<a class="btn btn-primary d-flex justify-content-center mt-2">Borrowed Books</a>
+				<a class="btn btn-primary d-flex justify-content-center mt-2" asp-controller="Borrow" asp-action="Borrowed">Borrowed Books</a>
 				<a class=" btn btn-danger d-flex justify-content-center mt-1" asp-action="Shelves" asp-controller="Book">Go Back to Shelves</a>
 			</div>
 		</div>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<LibraryWeb.Models.DTO.BookDTO>
+
+<html>
+	<head>
+	</head>
+	<body>
+		<style>
+			#myDiv1 {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border: 2px solid white;
+				background-image: url("../images/large-library-with-many-books-and-bookshelves-for-learning-with-knowledge-ai-generated-free-photo.jpg");
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+		</style>
+	<div class="container">
+		<p>asdasdasdas</p>
+	</div>
+	<div class="container-fluid mt-5 w-100 bg-white" id = "myDiv1">
+	
+		<div class="row  row-cols-xl-2 row-cols-sm">
+			
+			@foreach (var book in Model)
+			{
+				<div class="col ">
+					<img src="@book.CoverImageUrl"  id="img-1" />
+					<h4 class="text-center ">@book.Name</h4>
+					<p class="bg-dark"> Return Date: @book.ReturnDate</p>
+				</div>
+			}
+
+
+		</div>
+	
+
+	
+	
+	</body>
+</html>

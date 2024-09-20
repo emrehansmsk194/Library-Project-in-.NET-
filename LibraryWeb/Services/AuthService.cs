@@ -35,5 +35,24 @@ namespace LibraryWeb.Services
                 Url = libraryUrl + "/api/Users/register"
             });
         }
+        public Task<T>GetAllUsersAsync<T>(string token)
+        {
+            return SendAsync<T>(new APIRequest()
+            {
+                ApiType= SD.ApiType.GET,
+                Url = libraryUrl + "/api/Users/All",
+                Token = token
+            });
+        }
+        public Task<T> GetAllUserNamesAsync<T>(string token)
+        {
+            return SendAsync<T>(new APIRequest()
+            {
+                ApiType = SD.ApiType.GET,
+                Url = libraryUrl + "/api/Users/usernames",
+                Token = token
+
+            });
+        }
     }
 }

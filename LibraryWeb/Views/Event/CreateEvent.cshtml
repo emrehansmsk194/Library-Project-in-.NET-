@@ -1,0 +1,49 @@
+﻿@model LibraryWeb.Models.DTO.EventCreateDTO
+
+<form asp-action="CreateEvent">
+	<br />
+	<div class="container border mt-5 p-3 bg-secondary w-75">
+		<h1 class="text-primary text-center pt-2">Create Event</h1>
+		<hr />
+		<div class="row">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="col-2">
+				<label asp-for="EventName" class="control-label pt-2 text-dark" style="font-size:20px;"></label>
+			</div>
+			<div class="col-10 pb-3">
+				<input asp-for="EventName" class="form-control bg-white" />
+				<span asp-validation-for="EventName" class="text-danger"></span>
+
+
+			</div>
+			<div class="col-2">
+				<label asp-for="Description" class="control-label pt-2 text-dark" style="font-size:20px;"></label>
+			</div>
+			<div class="col-10 pb-3">
+				<input asp-for="Description" class="form-control bg-white" />
+				<span asp-validation-for="Description" class="text-danger"></span>
+			</div>
+			<div class="col-2">
+				<label asp-for="CoverImageUrl" class="control-label pt-2 text-dark" style="font-size:20px;"></label>
+			</div>
+			<div class="col-10 pb-3">
+				<input asp-for="CoverImageUrl" class="form-control bg-white" />
+				<span asp-validation-for="CoverImageUrl" class="text-danger"></span>
+			</div>
+			<div class="col-2">
+				<label asp-for="Date" class="control-label pt-2 text-dark" style="font-size:20px;"></label>
+			</div>
+			<div class="col-10 pb-3">
+
+				<input asp-for="Date" type="date" class="form-control bg-white" />
+				<span asp-validation-for="Date" class="text-danger"></span>
+			</div>
+			<div class="col-5 offset-2">
+				<a asp-action="IndexEvent" asp-controller="Event" class="btn-primary btn form-control ">Back to List</a>
+			</div>
+			<div class="col-5">
+				<input type="submit" value="Create" class="btn btn-success form-control" />
+			</div>
+		</div>
+	</div>
+</form>

@@ -50,6 +50,7 @@
         }
        
     </style>
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom box-shadow mb-3 fixed-top">
             <div class="container-fluid">
@@ -83,7 +84,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Event" asp-action="Index"><i class="bi bi-calendar4-event"></i> Events</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Event" asp-action="ShowEvents"><i class="bi bi-calendar4-event"></i> Events</a>
                         </li>
                         @if (User.IsInRole("admin"))
                         {
@@ -91,11 +92,12 @@
                                 <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person"></i> Admin</a>
                                 <ul class="dropdown-menu fw-bold" aria-labelledy="navbarDropdown2">
                                 <a class="nav-link text-dark" asp-controller="Book" asp-action="IndexBook"><i class="bi bi-table"></i> Book Table</a>
+                                <a class="nav-link text-dark" asp-controller="Event" asp-action="IndexEvent"><i class="bi bi-table"></i> Event Table</a>
                                 </ul>
                             </li>
                         }
                         <li class="nav-item">
-                            <a class="nav-link text-dark"><i class="bi bi-briefcase-fill"></i> Borrowed</a>
+                            <a class="nav-link text-dark" asp-controller="Borrow" asp-action="Borrowed"><i class="bi bi-briefcase-fill"></i> Borrowed</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto">

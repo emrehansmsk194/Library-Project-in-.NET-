@@ -25,10 +25,10 @@
  </section>
 
  <div class="container mt-2 w-25  justify-content-center align-items-center">
-    <form class="bg-warning" asp-action="ShelvesPost" asp-controller="Book" method="post">
+    <form class="bg-secondary" asp-action="ShelvesPost" asp-controller="Book" method="post">
     <div class="form-group p-1">
-        <h5 class="text-danger text-center">Filter Shelves</h5>
-        <label for="value" class="text-danger lead">Shelf</label>
+        <h5 class="text-center">Filter Shelves</h5>
+        <label for="value" class=" lead">Shelf</label>
         <select id ="value" name="value" class="form-select form-select-sm" aria-label="Small select example">
             <option value="">All Shelves</option>
             @foreach(var shelf in Model)

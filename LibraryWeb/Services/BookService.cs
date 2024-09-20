@@ -2,6 +2,7 @@
 using LibraryWeb.Models;
 using LibraryWeb.Models.DTO;
 using LibraryWeb.Services.IServices;
+using Newtonsoft.Json;
 
 namespace LibraryWeb.Services
 {
@@ -93,5 +94,26 @@ namespace LibraryWeb.Services
 
             });
         }
+        public Task<T> BorrowBookForUserAsync<T>(int bookId, string userId, string token)
+        {
+            return SendAsync<T>(new APIRequest()
+            {
+                ApiType = SD.ApiType.POST,
+                Url = bookUrl + "/api/LibraryBookAPI/borrow/" + bookId,
+				Data = userId,
+				Token = token
+
+            });
+        }
+        public Task<T> GetBorrowedBookAsync<T>( string token)
+        {
+            return SendAsync<T>(new APIRequest()
+            {
+                ApiType= SD.ApiType.GET,
+                Url = bookUrl + "/api/LibraryBookAPI/GetBorrowedBooks",
+                Token = token
+            });
+        }
+        
     }
 }

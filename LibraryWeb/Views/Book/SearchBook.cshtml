@@ -43,7 +43,11 @@
 								<p class=" card-text text-dark ">Author: @book.Author</p>
 								<p class=" card-text text-dark ">Category: @book.CategoryName</p>
 								<p class=" card-text text-dark ">Location: @book.LocationFloor-@book.LocationShelf</p>
-								
+								@if(User.IsInRole("admin"))
+								{
+									<a class="btn btn-primary text-white" asp-controller="Borrow" asp-action="AssignToUser" asp-route-id="@book.BookId">Assign To User</a>
+								}
+
 							</div>
 						</div>
 					

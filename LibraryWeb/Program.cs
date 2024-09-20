@@ -14,6 +14,7 @@ builder.Services.AddScoped<IAuthService,AuthService>();
 builder.Services.AddScoped<IBookService,BookService>();
 builder.Services.AddScoped<ILocationService,LocationService>();
 builder.Services.AddScoped<ICategoryService,CategoryService>();
+builder.Services.AddScoped<IEventService,EventService>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddHttpClient();
@@ -63,5 +64,8 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "BookPage",
     pattern: "{controller=Book}/{action=BookPage}/{bookId?}");
+app.MapControllerRoute(
+    name: "AssignToUser",
+    pattern: "{controller=Borrow}/{action=AssignToUser}/{id}");
 
 app.Run();

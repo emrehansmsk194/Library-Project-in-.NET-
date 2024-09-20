@@ -1,0 +1,56 @@
+﻿@model IEnumerable<LibraryWeb.Models.DTO.UserDTO>
+<html>
+	<head>
+	<link rel="stylesheet" href="~/css/Cards.css" />
+	</head>
+	<body>
+		<style>
+			#div1 {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				margin: auto 0;
+			}
+
+			body {
+				font-family: Arial, sans-serif;
+				background-image: url('../images/619a0a9a-8e50-45a5-afeb-3d7fd3b81bd3.webp');
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-attachment: fixed;
+				margin: 0;
+				padding: 0;
+				color: white;
+			}
+
+		</style>
+
+
+		<div class="container  w-25" id="div1">
+			<div class="card w-75">
+				<form asp-action="AssignToUser" method="post">
+					<img class="card-img-top d-block " src="@ViewBag.BookImageUrl" />
+					<input type="hidden" name="id" value="@ViewBag.BookId" />
+					<div class="card-body">
+						<div class="form-group text-dark text-center">
+							<label for="userId">Select User</label>
+							<select class="form-select " id="userId" name="userId">
+								@foreach (var user in Model)
+								{
+									<option value="@user.Id">@user.Name (@user.UserName)</option>
+								}
+							</select>
+							<button type="submit" class="btn btn-primary mt-1 m-auto ">Assign Book to User</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</div>
+
+	</body>
+</html>
+
+

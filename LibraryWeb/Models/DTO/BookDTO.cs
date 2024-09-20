@@ -18,6 +18,9 @@ namespace LibraryWeb.Models.DTO
         public int CategoryId { get; set; }
 
         public string? CoverImageUrl { get; set; }
+        public DateTime? BorrowedDate { get; set; } 
+        public DateTime? ReturnDate { get; set; }
+       
         public bool IsAdminOnly { get; set; } = false;
 
         public int LocationFloor {  get; set; } 
